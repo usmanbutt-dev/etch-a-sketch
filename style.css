@@ -8,11 +8,20 @@ body {
 
 .container {
     display: flex;
-    height: 80vh;
-    justify-content: center;
+    height: 90vh;
+    justify-content: space-evenly;
     align-items: center;
+    border: 2px solid black;    
+    padding-right: 25%;
 }
 
+.selection-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
 
 .grid {
     display: flex;
