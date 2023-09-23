@@ -26,7 +26,6 @@ body {
 }
 
 .grid-boxes {
-    border: 0px solid black;
     width: 20px;
     height: 20px;
     background-color: white;
