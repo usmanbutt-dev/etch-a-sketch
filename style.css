@@ -8,12 +8,13 @@ body {
 
 .container {
     display: flex;
-    height: 90vh;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid black;    
-    padding: 10px;
+    padding: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+    margin-top:5%;
+    margin-right: 15%;
 }
 
 .selection-box {
@@ -21,7 +22,65 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 28px;
+    padding: 5px;
+}
+
+.selection-box button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    width: 150px;
+    height: fit-content;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color:whitesmoke;
+}
+
+.selection-box #chosen-color {
+    border-radius: 5px;
+}
+
+.selection-box button:hover {
+    background-color:lightgray;
+    transform: scale(1.05);
+}
+
+.selection-box h1 {
+    margin: 0;
+}
+
+.selection-box #chosen-color {
+    width: 90px;    
+    height: 90px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: none;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.selection-box label {
+    font-size: 24px;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+.selection-box #grid-sizer {
+    appearance: none;
+    background-color: whitesmoke;
+    height: 5px;
+    border-radius: 5px;
+    color: black;
 }
 
 .grid {
@@ -39,4 +98,27 @@ body {
     height: 32px;
     background-color: white;
     cursor:default;
+}
+
+@media (max-width: 760px) {
+    .container {
+        margin-top:0;
+        margin-right: 0;
+        padding: 5px;
+    }
+
+    .selection-box {
+        flex-shrink: 0.5;
+    }
+    
+    .grid {
+        width: 400px;
+        height: 400px;
+    }
+
+    .grid-boxes {
+        width: 25px;
+        height: 25px;   
+    }
+
 }

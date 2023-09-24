@@ -4,8 +4,26 @@ let gridBoxes = document.querySelectorAll(".grid-boxes");
 let colorChooser = document.querySelector("#chosen-color");
 let gridSizer = document.querySelector("#grid-sizer");
 let chosenSize = document.querySelector("#chosen-size");
+let eraser = document.querySelector(".eraser-mode");
+let colorMode = document.querySelector(".color-mode");
+let clearMode = document.querySelector(".clear-all");
 let chosenColor = "black";
 let isMouseDown = false;
+
+
+clearMode.addEventListener("click",()=>{
+    gridBoxes.forEach(box => {
+        box.style.backgroundColor = "white";        
+    });
+});
+
+eraser.addEventListener("click", ()=>{
+    chosenColor = "white";
+})
+
+colorMode.addEventListener("click", ()=> {
+    chosenColor = colorChooser.value;
+})
 
 colorChooser.addEventListener(`input`, () => {
     chosenColor = colorChooser.value;
