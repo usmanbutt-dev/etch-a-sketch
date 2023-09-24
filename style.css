@@ -12,7 +12,8 @@ body {
     justify-content: space-evenly;
     align-items: center;
     border: 2px solid black;    
-    padding-right: 25%;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
 .selection-box {
@@ -26,16 +27,16 @@ body {
 .grid {
     display: flex;
     height:fit-content;
-    width: 320px;
-    border: 2px solid black;
+    width: 512px;
+    height: 512px;
     flex-wrap: wrap;
     justify-content:center;
     align-content: flex-start;
-    padding: 0px;
 }
 
 .grid-boxes {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     background-color: white;
+    cursor:default;
 }

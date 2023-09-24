@@ -1,3 +1,5 @@
+let grid = document.querySelector(".grid");
+let gridSize = (grid.offsetWidth - 3)
 let gridBoxes = document.querySelectorAll(".grid-boxes");
 let colorChooser = document.querySelector("#chosen-color");
 let gridSizer = document.querySelector("#grid-sizer");
@@ -10,30 +12,44 @@ colorChooser.addEventListener(`input`, () => {
 })
 
 gridSizer.addEventListener(`input`, () => {
-    console.log(chosenSize);
     chosenSize.innerHTML = gridSizer.value + " x " + gridSizer.value;
-    console.log(chosenSize);
+    gridBoxes.forEach(box => {
+        box.remove();
+    });
+    for(let i = 0; i < gridSizer.value*gridSizer.value; i++) {
+        let newBox = document.createElement("div");
+        newBox.classList.add("grid-boxes");
+        newBox.style.width = ((gridSize)/gridSizer.value) + "px";
+        newBox.style.height = ((gridSize)/gridSizer.value) + "px";
+        grid.appendChild(newBox);
+    }
+    gridBoxes = document.querySelectorAll(".grid-boxes");
+    addBoxFunctionality();
 })
 
 
-gridBoxes.forEach(box => {
-    box.addEventListener("mousedown", () => {
-        isMouseDown = true;
-        box.style.backgroundColor = chosenColor;
-        console.log(isMouseDown);
-    })
-});
-
-gridBoxes.forEach(box => {
-    box.addEventListener("mouseover", () => {
-        if(isMouseDown) {
+function addBoxFunctionality() {
+    gridBoxes.forEach(box => {
+        box.addEventListener("mousedown", () => {
+            isMouseDown = true;
             box.style.backgroundColor = chosenColor;
             console.log(isMouseDown);
-        }
-    })
-})
+        })
+    });
 
-document.addEventListener("mouseup", ()=> {
-    isMouseDown = false;
-    console.log(isMouseDown);
-})
+    gridBoxes.forEach(box => {
+        box.addEventListener("mouseover", () => {
+            if(isMouseDown) {
+                box.style.backgroundColor = chosenColor;
+                console.log(isMouseDown);
+            }
+        })
+    })
+
+    document.addEventListener("mouseup", ()=> {
+        isMouseDown = false;
+        console.log(isMouseDown);
+    })
+}
+
+document.addEventListener("DOMContentLoaded",addBoxFunctionality);
