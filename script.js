@@ -1,5 +1,5 @@
 let grid = document.querySelector(".grid");
-let gridSize = (grid.offsetWidth - 3)
+let gridSize = (grid.offsetWidth)
 let gridBoxes = document.querySelectorAll(".grid-boxes");
 let colorChooser = document.querySelector("#chosen-color");
 let gridSizer = document.querySelector("#grid-sizer");
